@@ -14,7 +14,7 @@ const Header = () => {
                 Dropdown
             </Link>
             <Link href="/reps" className="item">
-                Reps
+                Representatives
             </Link>
         </div>
     );

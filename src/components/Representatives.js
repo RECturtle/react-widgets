@@ -26,10 +26,6 @@ const Reps = () => {
                         params: {
                             // this key is publically available, no cost/privileged access involved here
                             key: "AIzaSyClRzDqDh5MsXwnCWi0kOiiBivP6JsSyBw",
-                            // action: "query",
-                            // list: "search",
-                            // origin: "*",
-                            // format: "json",
                             address: debouncedTerm,
                             includeOffices: true,
                             levels: "country",
@@ -40,7 +36,7 @@ const Reps = () => {
                         },
                     }
                 );
-
+                console.log(data.officials);
                 setResults(data.officials);
                 setErrorMessage("");
             } catch (e) {
@@ -59,7 +55,6 @@ const Reps = () => {
     const Candidates = results.map((result) => {
         return (
             <div key={result.name} className="item">
-                <div className="content">{result.name}</div>
                 <div className="right floated content">
                     <a
                         target="_blank"
@@ -68,8 +63,14 @@ const Reps = () => {
                         href={result.urls[result.urls.length - 1]}
                         onClick={onClick}
                     >
-                        Go
+                        Learn More
                     </a>
+                </div>
+                <div className="ui small header">{result.name}</div>
+                <div className="content">
+                    <p>
+                        <strong>Party:</strong> {result.party}
+                    </p>
                 </div>
             </div>
         );
@@ -79,7 +80,9 @@ const Reps = () => {
         <div>
             <div className="ui form">
                 <div className="field">
-                    <label>Enter your address or zipcode</label>
+                    <label>
+                        Enter your address or zipcode to view who represents you
+                    </label>
                     <input
                         value={term}
                         onChange={(e) => setTerm(e.target.value)}

@@ -4,7 +4,7 @@ import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
 import Route from "./components/Route";
 import Header from "./components/Header";
-import Reps from "./components/Reps";
+import Representatives from "./components/Representatives";
 
 const items = [
     {
@@ -57,7 +57,7 @@ const App = () => {
                 />
             </Route>
             <Route path="/reps">
-                <Reps />
+                <Representatives />
             </Route>
         </div>
     );
