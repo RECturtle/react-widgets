@@ -36,7 +36,6 @@ const Reps = () => {
                         },
                     }
                 );
-                console.log(data.officials);
                 setResults(data.officials);
                 setErrorMessage("");
             } catch (e) {
