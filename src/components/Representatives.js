@@ -10,7 +10,7 @@ const Reps = () => {
     useEffect(() => {
         const timerId = setTimeout(() => {
             setDebouncedTerm(term);
-        }, 500);
+        }, 750);
 
         return () => {
             clearTimeout(timerId);

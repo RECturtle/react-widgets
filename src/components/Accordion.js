@@ -4,7 +4,11 @@ const Accordion = ({ items }) => {
     const [activeIndex, setActiveIndex] = useState(null);
 
     const onTitleClick = (index) => {
-        setActiveIndex(index);
+        if (index === activeIndex) {
+            setActiveIndex(null);
+        } else {
+            setActiveIndex(index);
+        }
     };
 
     const renderedItems = items.map((item, index) => {
